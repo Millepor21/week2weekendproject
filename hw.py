@@ -1,7 +1,7 @@
 class ParkingGarage:
 
-    tickets = list(range(2))
-    parking_spaces = list(range(2))
+    tickets = list(range(101))
+    parking_spaces = list(range(101))
     current_ticket = {}
 
     def take_ticket(self, tickets, parking_spaces):
