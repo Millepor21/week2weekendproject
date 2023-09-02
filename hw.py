@@ -7,11 +7,17 @@ class ParkingGarage:
     def take_ticket(self, tickets, parking_spaces, current_ticket):
         self.my_ticket = tickets.pop()
         self.my_space = parking_spaces.pop()
-        current_ticket = { self : { 'ticket number' : self.my_ticket, 'space number' : self.my_space}}
+        current_ticket = { self : { 'ticket number' : self.my_ticket, 'space number' : self.my_space, 'paid ticket' : False}}
         return current_ticket
     
-    def pay_for_parking(self):
-        pass
+    def pay_for_parking(self, current_ticket):
+        payment = input("Please enter payment now. Type [enter] when complete. ").lower()
+        if "" not in payment:
+            print("The ticket has been paid, you have 15 minutes to leave")
+            current_ticket[self]['paid ticket'] = True
+        else:
+            print("Please try again.")
+            self.driver()
 
     def leave_garage(self):
         pass
