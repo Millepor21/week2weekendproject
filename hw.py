@@ -8,7 +8,6 @@ class ParkingGarage:
         self.my_ticket = tickets.pop()
         self.my_space = parking_spaces.pop()
         current_ticket = { self : { 'ticket number' : self.my_ticket, 'space number' : self.my_space, 'paid ticket' : False}}
-        current_ticket = { self : { 'ticket number' : self.my_ticket, 'space number' : self.my_space, 'paid' : False}}
         return current_ticket
     
     def pay_for_parking(self, current_ticket):
