@@ -8,7 +8,7 @@ class ParkingGarage:
         self.my_ticket = tickets.pop()
         self.my_space = parking_spaces.pop()
         current_ticket = { self : { 'ticket number' : self.my_ticket, 'space number' : self.my_space, 'paid ticket' : False}}
-        return current_ticket
+        return current_ticket, self.my_space, self.my_ticket
     
     def pay_for_parking(self, current_ticket):
         payment = input("Please enter payment now. Type [enter] when complete. ").lower()
@@ -19,8 +19,13 @@ class ParkingGarage:
             print("Please try again.")
             self.driver()
 
-    def leave_garage(self):
-        pass
+    def leave_garage(self, current_ticket, tickets, parking_spaces):
+        if current_ticket[self]['paid ticket'] == True:
+            print('Thanks You, have a nice day')
+            tickets.append(self.my_ticket)
+            parking_spaces.append(self.my_space)
+        else:
+            self.pay_for_parking(current_ticket)
 
     def driver(self):
         decision = ''
