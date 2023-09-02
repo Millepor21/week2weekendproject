@@ -32,18 +32,17 @@ class ParkingGarage:
         while 'l' not in decision:
             decision = input('Would you like to, [s]ee how many spots are available, [t]ake a ticket, [c]heck current ticket, [p]ay for a ticket, or [l]eave the garage?: ').lower()
             if 's' in decision:
-                pass
+                print(f'There are {len(self.parking_spaces)} parking spaces.')
             elif 't' in decision:
-                pass
+                self.take_ticket()
             elif 'c' in decision:
-                pass
+               print(f'There are {self.current_ticket[self]}')
             elif 'p' in decision:
-                pass
-            elif 'l' in decision:
-                pass
+                self.pay_for_parking()
             else:
                 print('Please choose one of the above options: ')
+        self.leave_garage()
 
 user1 = ParkingGarage()
 
-print(user1.take_ticket([1,2,3], [1,2,3],{}))
+user1.driver()
