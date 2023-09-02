@@ -7,7 +7,7 @@ class ParkingGarage:
     def take_ticket(self, tickets, parking_spaces, current_ticket):
         self.my_ticket = tickets.pop()
         self.my_space = parking_spaces.pop()
-        current_ticket = { self : { 'ticket number' : self.my_ticket, 'space number' : self.my_space}}
+        current_ticket = { self : { 'ticket number' : self.my_ticket, 'space number' : self.my_space, 'paid' : False}}
         return current_ticket
     
     def pay_for_parking(self):
@@ -34,3 +34,5 @@ class ParkingGarage:
                 print('Please choose one of the above options: ')
 
 user1 = ParkingGarage()
+
+print(user1.take_ticket([1,2,3], [1,2,3],{}))
